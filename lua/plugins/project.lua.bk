@@ -1,0 +1,37 @@
+local mapopts = { silent = true, noremap = true }
+
+return {
+  "coffebar/neovim-project",
+  dependencies = {
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+  },
+  lazy = false,
+  priority = 100,
+  opts = {
+    projects = {
+      "~/CodingProject/*",
+      "~/.config",
+    },
+    picker = {
+      type = "telescope",
+    },
+    last_session_on_startup = true,
+
+    forget_project_keys = {
+      -- insert mode;
+      i = "<C-d>",
+      -- Normal mode;
+      n = "d",
+    },
+  },
+
+  init = function()
+    vim.opt.sessionoptions:append("globals")
+  end,
+
+  --keymaps
+  vim.keymap.set("n", "op", ":NeovimProjectDiscover<CR>", mapopts),
+  vim.keymap.set("n", "oh", ":NeovimProjectHistory", mapopts),
+  vim.keymap.set("n", "ol", ":NeovimProjectLoadRecent", mapopts),
+}
