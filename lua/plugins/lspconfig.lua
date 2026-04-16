@@ -101,7 +101,12 @@ return {
             },
           },
 
-          cmd = { "clangd" },
+          cmd = {
+            "clangd",
+            "--query-driver=C:\\Users\\Shiki\\scoop\\apps\\gcc\\currents\\bin",
+            "--clang-tidy",
+            "--background-index",
+          },
           filetypes = { "c", "cpp" },
         },
 
@@ -110,6 +115,25 @@ return {
           settings = {
             ltex = {
               language = "en-GB",
+            },
+          },
+        },
+
+        prismals = {
+          cmd = {
+            "prisma-language-server",
+            "--stdio",
+          },
+          filetypes = {
+            "prisma",
+          },
+          root_markers = {
+            ".git",
+            "package.json",
+          },
+          settings = {
+            prisma = {
+              prismaFmtBinPath = "",
             },
           },
         },
