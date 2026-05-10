@@ -1,6 +1,6 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = { "williamboman/mason-lspconfig.nvim" },
+  "mason-org/mason.nvim",
+  dependencies = { "mason-org/mason-lspconfig.nvim" },
   opts = function(_, opts)
     vim.list_extend(opts.ensure_installed, {
       "prisma-language-server",

@@ -29,7 +29,12 @@ return {
           event = "notify",
           find = "No Information available",
         },
-        opts = { skip = true },
+        opts = {
+          skip = true,
+          cmdline = { enabled = false },
+          popupmenu = { enabled = false },
+          messages = { enabled = false },
+        },
       })
     end,
   },

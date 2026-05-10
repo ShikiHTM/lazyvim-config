@@ -121,7 +121,7 @@ return {
         hijack_netrw = true,
         mappings = {
           ["n"] = {
-            ["N"] = fn_actions.create,
+            ["c"] = fn_actions.create,
             ["h"] = fn_actions.goto_parent_dir,
             ["/"] = function()
               vim.cmd("startinsert")

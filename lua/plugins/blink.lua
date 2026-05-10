@@ -1,6 +1,9 @@
 return {
   "saghen/blink.cmp",
-  dependencies = { "rafamadriz/friendly-snippets" },
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+    "onsails/lspkind.nvim",
+  },
   version = "1.*",
   --- @module 'blink.cmp',
   --- @type blink.cmp.Config
@@ -25,11 +28,17 @@ return {
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
       menu = {
-        border = "rounded",
         draw = {
+          components = {
+            kind_icon = {
+              text = function(ctx)
+                return require("lspkind").symbol_map[ctx.kind] or ""
+              end,
+            },
+          },
           columns = {
             { "label", "label_description", gap = 1 },
-            { "kind_icon", "kind" },
+            { "kind_icon", "kind", gap = 1 },
           },
         },
       },

@@ -4,7 +4,7 @@ return {
   opts = {
     auto_update = true,
     neovim_image_text = "Shiki's wet dream",
-    main_image = "~/Downloads/smug_little_brat.jpg",
+    main_image = "~/Pictures/win_variation_2.png",
     log_level = nil,
     debounce_timeout = 10,
     buttons = false,
