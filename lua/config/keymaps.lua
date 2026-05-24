@@ -32,12 +32,9 @@ keymaps.set("n", "te", ":tabedit<Return>", opts)
 keymaps.set("n", "<tab>", ":tabnext<Return>", opts)
 keymaps.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
--- Diagnostic
-keymaps.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
+-- Inc rename
+keymaps.set("n", "<leader>rn", ":IncRename ", opts)
 
--- Load config
-vim.cmd([[
-    nnoremap cpp :-1read ~/script/template.cpp<CR>
-]])
+-- Move Text
+keymaps.set("n", "<A-j>", ":m .+1<CR>==", opts)
+keymaps.set("n", "<A-k>", ":m .-2<CR>==", opts)

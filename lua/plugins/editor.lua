@@ -63,13 +63,6 @@ return {
       end,
     },
     {
-      ";;",
-      function()
-        local builtin = require("telescope.builtin")
-        builtin.resume()
-      end,
-    },
-    {
       "sf",
       function()
         local telescope = require("telescope")
@@ -95,11 +88,11 @@ return {
     local actions = require("telescope.actions")
     local fn_actions = require("telescope").extensions.file_browser.actions
 
-    opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
+    opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
       wrap_results = true,
       layout_strategy = "horizontal",
       layout_config = { prompt_position = "top" },
-      sorting_strategy = "ascending",
+      sorting_strategy = "descending",
       winblend = 0,
       mappings = {
         n = {},
