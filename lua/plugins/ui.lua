@@ -17,7 +17,7 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
-        theme = "solarized",
+        theme = "edge",
       },
     },
   },

@@ -14,6 +14,7 @@ return {
       "pyright",
       "css-lsp",
       "html-lsp",
+      "gopls",
       "emmet-language-server",
     })
   end,

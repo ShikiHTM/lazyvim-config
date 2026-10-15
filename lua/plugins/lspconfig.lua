@@ -1,5 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
+
+  ---@type vim.lsp.Config
   opts = {
     inlay_hints = { enabled = true },
     diagnostics = {
@@ -24,36 +26,25 @@ return {
         },
       },
 
-      clangd = {
-        mason = false,
-        cmd = {
-          "clangd",
-          "--query-driver=C:/Users/Shiki/scoop/apps/gcc/current/bin/gcc.exe",
-          "--clang-tidy",
-          "--background-index",
-          "--offset-encoding=utf-16",
-        },
-      },
+      -- intelephense = {
+      --   filetypes = { "php", "blade", "php_cs" },
+      --   settings = {
+      --     intelephense = {
+      --       environment = {
+      --         includePaths = { "vendor/laravel/framework/src/Illuminate" },
+      --       },
+      --     },
+      --   },
+      -- },
 
-      intelephense = {
-        filetypes = { "php", "blade", "php_cs" },
-        settings = {
-          intelephense = {
-            environment = {
-              includePaths = { "vendor/laravel/framework/src/Illuminate" },
-            },
-          },
-        },
-      },
-
-      laravel_ls = {
-        cmd = { "laravel-ls" },
-        filetypes = {
-          "php",
-          "blade",
-        },
-        root_markers = { "artisan" },
-      },
+      -- laravel_ls = {
+      --   cmd = { "laravel-ls" },
+      --   filetypes = {
+      --     "php",
+      --     "blade",
+      --   },
+      --   root_markers = { "artisan" },
+      -- },
 
       gopls = {
         cmd = { "gopls" },
@@ -67,6 +58,42 @@ return {
             gofumpt = true,
           },
         },
+      },
+
+      tsc = {
+        settings = {
+          ["js/ts"] = {
+            implementationsCodeLens = {
+              enabled = false,
+            },
+            inlayHints = {
+              enumMemberValues = {
+                enabled = true,
+              },
+              functionLikeReturnTypes = {
+                enabled = true,
+              },
+              parameterNames = {
+                enabled = "literals",
+                suppressWhenArgumentMatchesName = true,
+              },
+              parameterTypes = {
+                enabled = true,
+              },
+              propertyDeclarationTypes = {
+                enabled = true,
+              },
+              variableTypes = {
+                enabled = true,
+              },
+            },
+          },
+        },
+      },
+
+      prismals = {
+        cmd = { "prisma-language-server", "--stdio" },
+        filetypes = { "prisma" },
       },
     },
 
