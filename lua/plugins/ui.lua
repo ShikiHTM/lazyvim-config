@@ -1,23 +1,34 @@
 return {
   {
-    "akinsho/bufferline.nvim",
-    keys = {
-      { "<Tab>", "<Cmd>BufferlineCycleNext<CR>", desc = "Next Tab" },
-      { "<S-Tab>", "<Cmd>BufferlineCyclePrev<CR>", desc = "Previous Tab" },
+    "romgrk/barbar.nvim",
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "nvim-tree/nvim-web-devicons",
     },
-    opts = {
-      options = {
-        show_buffer_close_icon = false,
-        mode = "tabs",
-      },
-    },
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    config = function()
+      require("barbar").setup({
+        auto_hide = false,
+
+        icons = {
+          diagnostics = {
+            [vim.diagnostic.severity.ERROR] = { enabled = true, icon = " " },
+            [vim.diagnostic.severity.WARN] = { enabled = true, icon = " " },
+            [vim.diagnostic.severity.INFO] = { enabled = true },
+            [vim.diagnostic.severity.HINT] = { enabled = true },
+          },
+        },
+      })
+    end,
   },
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = {
       options = {
-        theme = "edge",
+        theme = "ayu",
       },
     },
   },
@@ -644,5 +655,26 @@ return {
         end,
       })
     end,
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {
+      smear_between_buffers = true,
+
+      -- Smear cursor when moving within line or to neighbor lines.
+      -- Use `min_horizontal_distance_smear` and `min_vertical_distance_smear` for finer control
+      smear_between_neighbor_lines = true,
+
+      -- Draw the smear in buffer space instead of screen space when scrolling
+      scroll_buffer_space = true,
+
+      -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
+      -- Smears and particles will look a lot less blocky.
+      legacy_computing_symbols_support = false,
+
+      -- Smear cursor in insert mode.
+      -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
+      smear_insert_mode = true,
+    },
   },
 }

@@ -45,7 +45,7 @@ return {
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 500,
-        window = { border = "rounded" },
+        window = { border = "none" },
       },
       ghost_text = { enabled = true },
     },

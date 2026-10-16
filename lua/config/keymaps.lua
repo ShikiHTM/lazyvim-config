@@ -27,14 +27,21 @@ keymaps.set("n", "<C-w><Right>", "<C-w>>")
 keymaps.set("n", "<C-w><Up>", "<C-w>+")
 keymaps.set("n", "<C-w><Down>", "<C-w>-")
 
--- New tab
-keymaps.set("n", "te", ":tabedit<Return>", opts)
-keymaps.set("n", "<tab>", ":tabnext<Return>", opts)
-keymaps.set("n", "<s-tab>", ":tabprev<Return>", opts)
-
 -- Inc rename
 keymaps.set("n", "<leader>rn", ":IncRename ", opts)
 
 -- Move Text
 keymaps.set("n", "<A-j>", ":m .+1<CR>==", opts)
 keymaps.set("n", "<A-k>", ":m .-2<CR>==", opts)
+
+keymaps.del("n", "<leader>bp", opts)
+keymaps.del("n", "<leader>bP", opts)
+
+for i = 1, 9 do
+  keymaps.set("n", "<A-" .. i .. ">", "<Cmd>BufferGoto " .. i .. "<C=>", opts)
+end
+keymaps.set("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
+keymaps.set("n", "<leader>bc", "<Cmd>BufferClose<CR>", opts)
+keymaps.set("n", "<leader>bp", "<Cmd>BufferPick<CR>", opts)
+keymaps.set("n", "<s-tab>", "<Cmd>BufferPrevious<CR>", opts)
+keymaps.set("n", "<tab>", "<Cmd>BufferNext<CR>", opts)

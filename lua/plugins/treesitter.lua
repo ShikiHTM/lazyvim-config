@@ -19,6 +19,7 @@ return {
       "python",
       "java",
       "sql",
+      "prisma",
     },
   },
 
