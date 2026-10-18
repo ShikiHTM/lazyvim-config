@@ -42,3 +42,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.b.autoformat = false
   end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#343F4C" })
+    vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#343F4C" })
+  end,
+})
