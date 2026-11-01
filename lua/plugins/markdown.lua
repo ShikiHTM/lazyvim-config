@@ -7,5 +7,12 @@ return {
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
 
-  opts = {},
+  opts = {
+    latex = {
+      enabled = true,
+      inline = true,
+      block = true,
+      converter = { "latex2text" },
+    },
+  },
 }

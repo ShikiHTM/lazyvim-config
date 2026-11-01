@@ -110,6 +110,15 @@ return {
         filetypes = { "prisma" },
         root_markers = { "package.json", ".git" },
       },
+
+      cmake = {
+        cmd = { "cmake-language-server" },
+        filetypes = { "cmake" },
+        root_markers = { "CMakePresets.json", "CTestConfig.cmake", ".git", "build", "cmake" },
+        init_options = {
+          buildDirectory = "build",
+        },
+      },
     },
 
     setup = {},

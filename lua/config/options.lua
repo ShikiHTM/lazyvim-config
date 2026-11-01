@@ -10,5 +10,6 @@ vim.cmd([[let &t_Ce = "\e$4:0m"]])
 vim.cmd([[set tabstop=4]])
 vim.cmd([[set shiftwidth=4]])
 
--- Cursor style
--- vim.cmd([[set guicursor=n-v-c-i:block]])
+-- colorbackground
+vim.o.termguicolors = false
+vim.o.background = "light"

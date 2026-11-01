@@ -68,4 +68,22 @@ return {
       })
     end,
   },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "storm",
+      light_style = "day",
+      transparent = false,
+
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = true },
+        variables = { bold = true },
+      },
+
+      dim_inactive = true,
+    },
+  },
 }

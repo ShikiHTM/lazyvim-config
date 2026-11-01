@@ -20,6 +20,7 @@ return {
       "java",
       "sql",
       "prisma",
+      "latex",
     },
   },
 
